@@ -1,5 +1,6 @@
 body {
     background-image: url('background.png');
+    background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -7,15 +8,16 @@ body {
 
 .title {
     display: block;
-    margin: 30px auto 0px auto;
+    margin: 20px auto 0px auto;
     max-width: 90%;
+    max-height: 15vh;
 }
 
 .container {
     display: flex;
     justify-content: center;
     gap: 8vw;
-    margin: 20px;
+    margin: 15px;
 }
 
 .box {
