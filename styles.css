@@ -86,7 +86,7 @@ input:focus {
     outline: none
 }
 
-.submit-button {
+#submit-button {
     background-color: #555368;
     border: 2px solid #7A779A;
     color: white;
@@ -99,7 +99,7 @@ input:focus {
     padding: 10px 20px;
 }
 
-.submit-button:hover {
+#submit-button:hover {
     background-color: #7A779A;
 }
 
@@ -113,10 +113,5 @@ input:focus {
         width: 80vw;
         height: auto;
         padding: 25px;
-    }
-
-    .submit-button {
-        width: 80%;
-        font-size: 14px;
     }
 }
