@@ -1,10 +1,30 @@
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
-    color: #333;
-    text-align: center;
+    background-image: url('background.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 
-h1 {
-    color: #0078d7;
+.title {
+    display: block;
+    margin: 30px auto 0px auto;
+    max-width: 90%;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    gap: 8vw;
+    margin: 20px;
+}
+
+.box {
+    display: flex;
+    width: 40vw;
+    height: 75vh;
+    background-color: #555368;
+    color: white;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50px;
 }
