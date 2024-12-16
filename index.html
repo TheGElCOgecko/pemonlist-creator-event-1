@@ -11,7 +11,7 @@
         <img src="Title.png" alt="Pemonlist Creator Event" class="title">
     </header>
     <div class="container">
-        <div class="box">
+        <div class="box" id="left-box">
             <h1>Rules & Info</h1>
             <p>
                 For the 1-year platformer anniversary, we have decided to start a creator contest!
@@ -44,7 +44,7 @@
             </p>
             <h2>We wish you all good luck!</h2>
         </div>
-        <div class="box">
+        <div class="box" id="right-box">
             <h1>Submission</h1>
             <h3>Level name</h3>
             <input type="text" id="input-name" placeholder="Level name">
@@ -54,6 +54,9 @@
             <input type="text" id="input-creator" placeholder="Creator">
             <h3>Video showcase</h3>
             <input type="text" id="input-video" placeholder="Video link">
+            <div id="video-preview" class="video-preview">
+                <h1 id="video-preview-placeholder">Video preview</h1>
+            </div>
             <button id="submit-button" onClick="submitForm()">Submit</button>
         </div>
     </div>
