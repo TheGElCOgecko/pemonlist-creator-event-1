@@ -8,6 +8,8 @@ const inputVideo = document.getElementById("input-video")
 const videoPreview = document.getElementById("video-preview")
 const videoPreviewPlaceholder = document.getElementById("video-preview-placeholder")
 
+const port = getPort()
+
 // when video link is added, show video preview
 inputVideo.addEventListener("input", () => {
     const url = inputVideo.value.trim()
@@ -45,24 +47,51 @@ inputVideo.addEventListener("input", () => {
 })
 
 // When form is submitted, store it in database
-function submitForm() {
+async function submitForm() {
     const name = inputName.value
     const id = inputId.value.trim()
     const creator = inputCreator.value
     const video = inputVideo.value.trim()
-    
-    if (!name || !id || !creator || !video) {
-        alert("Please fill in all fields!")
-        return
-    }
 
     console.log(name)
     console.log(id)
     console.log(creator)
     console.log(video)
+
+    const data = { name, id, creator, video }
+
+    try {
+        console.log("Sending form data:", JSON.stringify(data))
+        const response = await fetch('http://localhost:3000/submit', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+        console.log(response)
+
+        const result = await response.json()
+        console.log(result)
+        if (response.ok) alert(result.message)
+        else alert(result.error)
+    } catch (err) {
+        console.error("Error connecting to server:", err)
+        alert(`Error connecting to server: ${err.message}`)
+    }
 }
 
 // HELPER FUNCTIONS
+async function getPort() {
+    try {
+        const response = await fetch("http://localhost:3000/config"); // Replace with your backend URL
+        const result = await response.json();
+        return result.port;
+    } catch (error) {
+        console.error("Error fetching port:", error);
+    }
+}
+
 function isYouTubeUrl(url) {
     return url.includes("youtube.com") || url.includes("youtu.be");
 }
