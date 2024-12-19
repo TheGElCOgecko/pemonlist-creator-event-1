@@ -53,11 +53,6 @@ async function submitForm() {
     const creator = inputCreator.value
     const video = inputVideo.value.trim()
 
-    console.log(name)
-    console.log(id)
-    console.log(creator)
-    console.log(video)
-
     const data = { name, id, creator, video }
 
     // send data to database
