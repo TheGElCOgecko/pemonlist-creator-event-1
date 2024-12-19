@@ -20,7 +20,7 @@ inputVideo.addEventListener("input", () => {
     var videoId = null
 
     const iframeElement = document.createElement("iframe")
-    if (videoId = getYouTubeId(url)) {
+    if (videoId = getYouTubeId(url)) { // if it is a youtube link, create youtube iframe element
         iframeElement.src = `https://www.youtube.com/embed/${videoId}`
         iframeElement.width = "100%"
         iframeElement.height = "auto"
@@ -31,7 +31,7 @@ inputVideo.addEventListener("input", () => {
         videoPreview.innerHTML = ""
         videoPreview.appendChild(iframeElement)
     }
-    else if (videoId = getGoogleDriveId(url)) {
+    else if (videoId = getGoogleDriveId(url)) { // if it is a google drive link, create google drive iframe element
         iframeElement.src = `https://drive.google.com/file/d/${videoId}/preview`
         iframeElement.width = "100%"
         iframeElement.height = "auto"
@@ -46,7 +46,7 @@ inputVideo.addEventListener("input", () => {
     }
 })
 
-// When form is submitted, store it in database
+// when form is submitted, store it in database
 async function submitForm() {
     const name = inputName.value
     const id = inputId.value.trim()
@@ -60,6 +60,7 @@ async function submitForm() {
 
     const data = { name, id, creator, video }
 
+    // send data to database
     try {
         console.log("Sending form data:", JSON.stringify(data))
         const response = await fetch('http://localhost:3000/submit', {
@@ -82,6 +83,7 @@ async function submitForm() {
 }
 
 // HELPER FUNCTIONS
+// get value of port from server.js
 async function getPort() {
     try {
         const response = await fetch("http://localhost:3000/config"); // Replace with your backend URL
@@ -115,6 +117,7 @@ function getYouTubeId(url) {
     return null
 }
 
+// get google drive video ID
 function getGoogleDriveId(url) {
     if (!isGoogleDriveUrl(url)) return null
     try {

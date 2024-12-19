@@ -35,6 +35,7 @@ app.post("/submit", async (req, res) => {
         const db = client.db("creator-event-1")
         const submissions = db.collection("submissions")
 
+        // create item and add to database
         const documentId = await submissions.countDocuments()
         console.log(documentId)
         const obj = { documentId, name, id, creator, video }
