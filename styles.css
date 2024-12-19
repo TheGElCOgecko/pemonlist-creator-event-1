@@ -8,9 +8,9 @@ body {
 
 @font-face {
     font-family: 'Jua';
-    src: url('Jua/jua.woff2') format('woff2'),
-        url('Jua/jua.woff') format('woff'),
-        url('Jua/jua.ttf') format('truetype');
+    src: url('/Jua/jua.woff2') format('woff2'),
+        url('/Jua/jua.woff') format('woff'),
+        url('/Jua/jua.ttf') format('truetype');
 }
 
 * {
