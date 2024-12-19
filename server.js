@@ -40,9 +40,8 @@ app.post("/submit", async (req, res) => {
         const submissions = db.collection("submissions")
 
         // create item and add to database
-        const documentId = await submissions.countDocuments()
-        console.log(documentId)
-        const obj = { documentId, name, id, creator, video }
+        const timestamp = Date.now()
+        const obj = { timestamp, name, id, creator, video }
         await submissions.insertOne(obj)
 
         res.status(200).json({ message: "Submission successful!" })
