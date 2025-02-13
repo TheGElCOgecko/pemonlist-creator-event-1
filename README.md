@@ -3,4 +3,4 @@ First Pemonlist creator event! In celebration of the one-year anniversary of Geo
 
 Check out our main website! https://pemonlist.com
 
-See my other Pemonlist project at https://vote.pemonlist.com
+See my other Pemonlist project at https://vote.pemonlist.com (beta)
